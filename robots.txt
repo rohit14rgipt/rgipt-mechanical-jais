@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /js/
+Disallow: /supabase/
+
+Sitemap: https://rohit14rgipt.github.io/rgipt-mechanical-jais/sitemap.xml

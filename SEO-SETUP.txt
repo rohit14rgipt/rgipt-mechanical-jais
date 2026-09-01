@@ -1,0 +1,27 @@
+RGIPT MECHANICAL WEBSITE — SEO SETUP
+
+Already included in this package:
+- SEO title and description
+- Canonical URL
+- Open Graph / social sharing metadata
+- JSON-LD structured data
+- robots.txt
+- sitemap.xml
+- admin.html marked noindex
+
+NEXT: GOOGLE SEARCH CONSOLE
+1. Open https://search.google.com/search-console/
+2. Add a URL-prefix property for:
+   https://rohit14rgipt.github.io/rgipt-mechanical-jais/
+3. Choose HTML tag verification.
+4. Google will give you a meta tag containing a unique verification value.
+5. Add that exact meta tag inside index.html <head>.
+6. Deploy the updated site to GitHub Pages.
+7. Return to Search Console and click Verify.
+8. Open Sitemaps and submit:
+   https://rohit14rgipt.github.io/rgipt-mechanical-jais/sitemap.xml
+9. Use URL Inspection for the homepage and request indexing.
+
+IMPORTANT:
+- Do not put the Google verification value in chat or share it publicly.
+- Search indexing is controlled by Google; submitting the sitemap does not guarantee a particular ranking or immediate indexing.
