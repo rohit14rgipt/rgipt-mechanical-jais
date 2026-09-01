@@ -11,7 +11,7 @@
     <title>
         Department of Mechanical Engineering | RGIPT
     </title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -50,7 +50,7 @@
          <div class="rgipt-logo-image">
 
     
-     <img src="rgipt-logo.png.png" alt="RGIPT Logo">
+     <img src="images/rgipt-logo.png" alt="RGIPT Logo">
 </div>
             <div class="brand-text">
 
@@ -103,12 +103,20 @@
                 Laboratories
             </a>
 
+            <a href="#department-gallery">
+                Gallery
+            </a>
+
             <a href="#notices">
                 Notices
             </a>
 
             <a href="#contact">
                 Contact
+            </a>
+
+            <a href="admin.html" class="admin-nav-link">
+                Admin
             </a>
 
         </div>
@@ -1347,7 +1355,7 @@
         <div class="faculty-card">
 
            <div class="faculty-photo">
-    <img src="harish-hirani.jpg"
+    <img src="images/harish-hirani.jpg"
          alt="Prof. Harish Hirani">
 </div>
             <div class="faculty-info">
@@ -1395,7 +1403,7 @@
         <div class="faculty-card">
 
            <div class="faculty-photo">
-    <img src="amit-ranjan.jpg"
+    <img src="images/amit-ranjan.jpg"
          alt="Dr. Amit Ranjan">
 </div>
             <div class="faculty-info">
@@ -1443,7 +1451,7 @@
         <div class="faculty-card hod-card">
 
             <div class="faculty-photo">
-    <img src="tushar-sharma.jpg"
+    <img src="images/tushar-sharma.jpg"
          alt="Dr. Tushar Sharma">
 </div>
 
@@ -1496,7 +1504,7 @@
         <div class="faculty-card">
 
            <div class="faculty-photo">
-    <img src="naveen-tripathi.jpg"
+    <img src="images/naveen-tripathi.jpg"
          alt="Dr. Naveen Mani Tripathi">
 </div>
 
@@ -1545,7 +1553,7 @@
         <div class="faculty-card">
 
            <div class="faculty-photo">
-    <img src="amey-agharkar.jpg"
+    <img src="images/amey-agharkar.jpg"
          alt="Dr. Amey Nitin Agharkar">
 </div>
 
@@ -1591,7 +1599,7 @@
         <div class="faculty-card">
 
            <div class="faculty-photo">
-    <img src="ananta-dutta.jpg"
+    <img src="images/ananta-dutta.jpg"
          alt="Dr. Ananta Dutta">
 </div>
 
@@ -1636,7 +1644,7 @@
         <div class="faculty-card">
 
            <div class="faculty-photo">
-    <img src="anupam-choubey.jpg"
+    <img src="images/anupam-choubey.jpg"
          alt="Dr. Anupam Choubey">
 </div>
 
@@ -2533,6 +2541,38 @@
      CONTACT
 ===================================================== -->
 
+<!-- =====================================================
+     DYNAMIC CMS CONTENT
+===================================================== -->
+<section id="department-gallery" class="rgipt-dynamic-section">
+  <div class="section-title"><p>DEPARTMENT GALLERY</p><h2>Department Gallery</h2></div>
+  <div id="rgipt-gallery-list" class="rgipt-dynamic-grid"><p>Loading gallery…</p></div>
+</section>
+<section id="lab-equipment" class="rgipt-dynamic-section">
+  <div class="section-title"><p>LABORATORIES</p><h2>Lab Equipment</h2></div>
+  <div id="rgipt-equipment-list" class="rgipt-dynamic-grid"><p>Loading equipment…</p></div>
+</section>
+<section id="dynamic-notes" class="rgipt-dynamic-section">
+  <div class="section-title"><p>ACADEMIC RESOURCES</p><h2>Latest Subject Notes</h2></div>
+  <div id="rgipt-notes-list" class="rgipt-dynamic-grid"><p>Loading notes…</p></div>
+</section>
+<section id="dynamic-syllabus" class="rgipt-dynamic-section">
+  <div class="section-title"><p>ACADEMIC RESOURCES</p><h2>Syllabus</h2></div>
+  <div id="rgipt-syllabus-list" class="rgipt-dynamic-grid"><p>Loading syllabus…</p></div>
+</section>
+<section id="alumni" class="rgipt-dynamic-section">
+  <div class="section-title"><p>OUR ALUMNI</p><h2>Alumni</h2></div>
+  <div id="rgipt-alumni-list" class="rgipt-dynamic-grid"><p>Loading alumni…</p></div>
+</section>
+<section id="locations" class="rgipt-dynamic-section">
+  <div class="section-title"><p>FIND US</p><h2>Lab & Classroom Locations</h2></div>
+  <div id="rgipt-location-list" class="rgipt-dynamic-grid"><p>Loading locations…</p></div>
+</section>
+<section id="dynamic-notices" class="rgipt-dynamic-section">
+  <div class="section-title"><p>UPDATES</p><h2>Latest Notices</h2></div>
+  <div id="rgipt-notice-list" class="rgipt-dynamic-grid"><p>Loading notices…</p></div>
+</section>
+
 <section id="contact" class="contact-section">
 
     <div class="section-heading">
@@ -2883,7 +2923,11 @@
 </footer>
 
 
-<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/public-content.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 

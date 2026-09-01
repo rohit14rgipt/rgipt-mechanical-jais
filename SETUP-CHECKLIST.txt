@@ -1,0 +1,26 @@
+RGIPT MECHANICAL — FINAL UPLOAD-ENABLED CMS
+================================================
+
+[ ] 1. Keep js/config.js connected to your Supabase project.
+    SUPABASE_URL must be https://PROJECT-REF.supabase.co
+    (do NOT include /rest/v1/)
+    Use only the Supabase publishable key in the browser.
+
+[ ] 2. You already ran the original schema and your dashboard works.
+    Run supabase/upgrade-upload-cms.sql ONCE now to enable the final
+    direct-upload workflow and close the old admin self-insert policy.
+
+[ ] 3. Supabase Authentication -> Users -> create your admin user.
+
+[ ] 4. Add that user's UUID to public.admin_users using SQL Editor:
+    insert into public.admin_users (id) values ('YOUR-USER-UUID');
+
+[ ] 5. Open admin.html and sign in.
+
+[ ] 6. Test Subject Notes with a small PDF.
+
+[ ] 7. Test Department Gallery -> Gallery Photos with 2 images.
+
+[ ] 8. When tests pass, upload the rgipt-final folder to GitHub Pages.
+
+Direct uploads now go to Supabase Storage bucket: site-assets

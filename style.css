@@ -166,6 +166,7 @@ nav {
 /* =========================================================
    HERO
 ========================================================= */
+
 .hero {
     min-height: 540px;
 
@@ -181,15 +182,16 @@ nav {
 
     background-color: #071d49;
 
-    background-image:
-        linear-gradient(
-            rgba(4, 25, 62, 0.78),
-            rgba(4, 25, 62, 0.78)
-        ),
-        url("./hero-jais.jpg");
+   
+ background-image:
+    linear-gradient(
+        rgba(4, 25, 62, 0.78),
+        rgba(4, 25, 62, 0.78)
+    ),
+   url("../images/hero-jais.jpg");
 
-    background-size: cover;
-    background-position: center center;
+background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -3210,4 +3212,135 @@ footer {
         padding: 25px;
     }
 
+}/* ============================================================
+   RGIPT CMS dynamic content
+============================================================ */
+.admin-nav-link{font-weight:800!important}.rgipt-dynamic-section{padding:70px 5%;background:#f6f8fb;border-top:1px solid #e4e9ef}.rgipt-dynamic-section:nth-of-type(even){background:#fff}.rgipt-dynamic-section .section-title{text-align:center;margin-bottom:28px}.rgipt-dynamic-section .section-title p{font-size:12px;letter-spacing:2px;font-weight:800;color:#b68b2c;margin:0 0 6px}.rgipt-dynamic-section .section-title h2{margin:0;font-size:32px;color:#0a2540}.rgipt-dynamic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1200px;margin:auto}.rgipt-dynamic-card,.rgipt-gallery-card,.rgipt-equipment-card,.rgipt-alumni-card{background:#fff;border:1px solid #e2e8ef;border-radius:14px;padding:18px;box-shadow:0 8px 28px rgba(7,27,51,.06)}.rgipt-dynamic-card h3,.rgipt-gallery-card h3,.rgipt-equipment-card h3,.rgipt-alumni-card h3{margin:0 0 8px;color:#0a2540}.rgipt-dynamic-card p,.rgipt-gallery-card p,.rgipt-equipment-card p,.rgipt-alumni-card p{color:#526275;line-height:1.6}.rgipt-meta{font-size:12px!important;color:#7a8796!important}.rgipt-dynamic-link{display:inline-block;margin-top:8px;color:#9b711b;font-weight:800;text-decoration:none}.rgipt-dynamic-link:hover{text-decoration:underline}.rgipt-gallery-image{height:170px;overflow:hidden;border-radius:10px;margin-bottom:12px}.rgipt-gallery-image img,.rgipt-equipment-card>img,.rgipt-alumni-card>img{width:100%;height:100%;object-fit:cover;border-radius:10px}.rgipt-gallery-image .rgipt-placeholder{height:100%}.rgipt-placeholder{display:grid;place-items:center;background:#eef2f6;color:#657387;padding:20px;text-align:center;border-radius:10px}.rgipt-photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}.rgipt-photo-grid img{width:100%;height:75px;object-fit:cover;border-radius:6px}.rgipt-equipment-card{display:grid;grid-template-columns:150px 1fr;gap:16px}.rgipt-equipment-card>img{height:150px}.rgipt-alumni-card{display:grid;grid-template-columns:90px 1fr;gap:14px}.rgipt-alumni-card>img{width:90px;height:90px}.rgipt-alumni-card .rgipt-placeholder{height:90px}.rgipt-dynamic-section>p{max-width:1200px;margin:auto;color:#667085}@media(max-width:900px){.rgipt-dynamic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.rgipt-dynamic-grid{grid-template-columns:1fr}.rgipt-equipment-card{grid-template-columns:1fr}.rgipt-equipment-card>img{height:200px}.rgipt-alumni-card{grid-template-columns:1fr}.rgipt-alumni-card>img{width:100%;height:200px}.rgipt-photo-grid{grid-template-columns:repeat(2,1fr)}}
+
+
+/* =========================================================
+   COMPACT SEMESTER ACCORDION
+   Keeps the homepage short while preserving every subject.
+   ========================================================= */
+.semester-block {
+    margin-bottom: 16px;
+}
+
+.semester-header {
+    position: relative;
+    cursor: pointer;
+    padding: 16px 22px;
+    user-select: none;
+    padding-right: 64px;
+}
+
+.semester-header::after {
+    content: '+';
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255,255,255,.45);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.semester-header.is-open::after {
+    content: '−';
+    background: rgba(255,255,255,.12);
+}
+
+.semester-header:hover::after {
+    background: rgba(255,255,255,.14);
+}
+
+.semester-header .semester-number {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    font-size: 17px;
+}
+
+.semester-header h3 {
+    font-size: 20px;
+}
+
+.semester-header p {
+    font-size: 12px;
+}
+
+.semester-subjects {
+    display: none;
+}
+
+.semester-block.is-open .semester-subjects {
+    display: grid;
+}
+
+/* The original markup uses .subject-grid directly; JS adds this class. */
+.semester-block.is-open .subject-grid {
+    padding: 18px;
+    gap: 12px;
+}
+
+.semester-block.is-open .subject-card {
+    min-height: 112px;
+    padding: 15px;
+}
+
+.semester-block.is-open .subject-card h4 {
+    font-size: 15px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.semester-block.is-open .subject-card > span {
+    margin-bottom: 5px;
+}
+
+.semester-block.is-open .subject-card a {
+    font-size: 11px;
+}
+
+@media (max-width: 700px) {
+    .semester-header {
+        padding: 14px 17px;
+        padding-right: 58px;
+        gap: 12px;
+    }
+
+    .semester-header .semester-number {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+    }
+
+    .semester-header h3 {
+        font-size: 17px;
+    }
+
+    .semester-block.is-open .subject-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 12px;
+        gap: 9px;
+    }
+
+    .semester-block.is-open .subject-card {
+        min-height: 100px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 460px) {
+    .semester-block.is-open .subject-grid {
+        grid-template-columns: 1fr;
+    }
 }
