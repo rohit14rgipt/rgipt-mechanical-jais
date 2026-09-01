@@ -188,7 +188,7 @@ nav {
         rgba(4, 25, 62, 0.78),
         rgba(4, 25, 62, 0.78)
     ),
-   url("hero-jais.jpg");
+   url("../images/hero-jais.jpg");
 
 background-size: cover;
     background-position: center;
@@ -2655,4 +2655,561 @@ footer {
 
 }section {
     scroll-margin-top: 85px;
+}/* =========================================================
+   ACADEMIC RESOURCES
+========================================================= */
+
+.resources-section {
+    padding: 90px 7%;
+    background: #ffffff;
+}
+
+.notes-section {
+    background: #f7f8fa;
+}
+
+.resource-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.resource-card {
+    background: #f7f8fa;
+
+    border: 1px solid #e0e3e7;
+
+    border-top: 4px solid #071d49;
+
+    padding: 30px;
+
+    min-height: 270px;
+
+    transition: 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,0.09);
+}
+
+.resource-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #071d49;
+
+    color: #ffc400;
+
+    font-size: 26px;
+
+    margin-bottom: 20px;
+}
+
+.resource-card h3 {
+    color: #071d49;
+
+    font-size: 19px;
+
+    margin-bottom: 12px;
+}
+
+.resource-card p {
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+.resource-card a {
+    color: #071d49;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.resource-card a:hover {
+    color: #d6a000;
+}
+
+
+/* =========================================================
+   CLASS NOTES
+========================================================= */
+
+.notes-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.note-card {
+    background: white;
+
+    border: 1px solid #e0e3e7;
+
+    padding: 28px;
+
+    transition: 0.3s ease;
+}
+
+.note-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,0.08);
+}
+
+.note-card .semester {
+    display: inline-block;
+
+    background: #ffc400;
+
+    color: #071d49;
+
+    padding: 5px 9px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+}
+
+.note-card h3 {
+    color: #071d49;
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+.note-card p {
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 17px;
+}
+
+.note-card a {
+    color: #071d49;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.note-card a:hover {
+    color: #d6a000;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .resource-grid,
+    .notes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .resources-section {
+        padding: 60px 5%;
+    }
+
+    .resource-grid,
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+
+}/* =========================================================
+   2025-29 CLASS NOTES & SEMESTER SUBJECTS
+========================================================= */
+
+.notes-section {
+    padding: 90px 7%;
+    background: #f7f8fa;
+}
+
+
+/* OFFICIAL CURRICULUM */
+
+.official-curriculum {
+    max-width: 1200px;
+    margin: 0 auto 45px;
+
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    padding: 25px 30px;
+
+    background: #071d49;
+    color: white;
+
+    border-left: 5px solid #ffc400;
+}
+
+.curriculum-icon {
+    min-width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffc400;
+
+    color: #071d49;
+
+    font-size: 27px;
+}
+
+.curriculum-content h3 {
+    color: #ffc400;
+    margin-bottom: 6px;
+    font-size: 20px;
+}
+
+.curriculum-content p {
+    color: #d8deea;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.curriculum-content a {
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.curriculum-content a:hover {
+    color: #ffc400;
+}
+
+
+/* SEMESTER BLOCK */
+
+.semester-block {
+    max-width: 1200px;
+    margin: 0 auto 32px;
+
+    background: white;
+
+    border: 1px solid #e0e3e7;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.05);
+
+    overflow: hidden;
+}
+
+
+/* SEMESTER HEADER */
+
+.semester-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 22px 28px;
+
+    background: #071d49;
+
+    color: white;
+}
+
+.semester-number {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffc400;
+
+    color: #071d49;
+
+    font-size: 20px;
+
+    font-weight: 900;
+}
+
+.semester-header h3 {
+    color: white;
+
+    font-size: 23px;
+
+    margin: 0 0 3px;
+}
+
+.semester-header p {
+    color: #cbd4e3;
+
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+/* SUBJECT GRID */
+
+.subject-grid {
+    padding: 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+
+/* SUBJECT CARD */
+
+.subject-card {
+    position: relative;
+
+    padding: 20px;
+
+    background: #f7f8fa;
+
+    border: 1px solid #e1e4e8;
+
+    min-height: 150px;
+
+    transition: 0.25s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.08);
+
+    border-color: #ffc400;
+}
+
+.subject-card > span {
+    display: inline-block;
+
+    color: #b18700;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.7px;
+
+    margin-bottom: 8px;
+}
+
+.subject-card h4 {
+    color: #071d49;
+
+    font-size: 16px;
+
+    line-height: 1.4;
+
+    margin-bottom: 12px;
+}
+
+.subject-card p {
+    color: #666;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+}
+
+.subject-card a {
+    color: #071d49;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.subject-card a:hover {
+    color: #c29300;
+}
+
+
+/* ELECTIVES */
+
+.elective-card {
+    border-left: 4px solid #071d49;
+}
+
+
+/* FINAL PROJECT */
+
+.final-project-card {
+    border-left: 5px solid #ffc400;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f4f6fa
+        );
+}
+
+
+/* SEMESTER NOTE */
+
+.semester-note {
+    padding: 0 25px 20px;
+
+    margin: 0;
+
+    color: #777;
+
+    font-size: 12px;
+
+    font-style: italic;
+}
+
+
+/* INTERNSHIP */
+
+.internship-box {
+    max-width: 1200px;
+
+    margin: 45px auto 0;
+
+    padding: 28px 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: #071d49;
+
+    color: white;
+}
+
+.internship-icon {
+    min-width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ffc400;
+
+    color: #071d49;
+
+    font-size: 28px;
+}
+
+.internship-box h3 {
+    color: #ffc400;
+
+    margin: 0 0 10px;
+
+    font-size: 20px;
+}
+
+.internship-box p {
+    color: #dce2ec;
+
+    font-size: 13px;
+
+    margin: 5px 0;
+}
+
+
+/* TABLET */
+
+@media (max-width: 950px) {
+
+    .subject-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .notes-section {
+        padding: 60px 5%;
+    }
+
+    .official-curriculum {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 23px;
+    }
+
+    .subject-grid {
+        grid-template-columns:
+            1fr;
+
+        padding: 18px;
+    }
+
+    .semester-header {
+        padding: 18px;
+    }
+
+    .semester-header h3 {
+        font-size: 20px;
+    }
+
+    .internship-box {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 25px;
+    }
+
 }
