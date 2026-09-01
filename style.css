@@ -188,9 +188,8 @@ nav {
         rgba(4, 25, 62, 0.78),
         rgba(4, 25, 62, 0.78)
     ),
-   url("../images/hero-jais.jpg");
-
-background-size: cover;
+  url("hero-jais.jpg");
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
