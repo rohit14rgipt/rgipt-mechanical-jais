@@ -166,7 +166,6 @@ nav {
 /* =========================================================
    HERO
 ========================================================= */
-
 .hero {
     min-height: 540px;
 
@@ -182,15 +181,15 @@ nav {
 
     background-color: #071d49;
 
-   
- background-image:
-    linear-gradient(
-        rgba(4, 25, 62, 0.78),
-        rgba(4, 25, 62, 0.78)
-    ),
-  url("./hero-jais.jpg");
+    background-image:
+        linear-gradient(
+            rgba(4, 25, 62, 0.78),
+            rgba(4, 25, 62, 0.78)
+        ),
+        url("./hero-jais.jpg");
+
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
 }
 
