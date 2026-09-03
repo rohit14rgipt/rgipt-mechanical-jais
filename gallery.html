@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Department Gallery | RGIPT Mechanical Engineering</title>
+<meta name="description" content="Mechanical Engineering department photo galleries at RGIPT Jais.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="header-container"><div class="brand"><img src="images/rgipt-logo.png" alt="RGIPT logo"><div class="brand-text"><h1>राजीव गांधी पेट्रोलियम प्रौद्योगिकी संस्थान</h1><h2>Rajiv Gandhi Institute of Petroleum Technology</h2><p>An Institution of National Importance</p></div></div></div><nav><div class="nav-container">
+<a href="index.html">Home</a><a href="resources.html">Academics</a><a href="index.html#faculty">Faculty</a><a href="labs.html">Laboratories</a><a href="gallery.html" class="active">Gallery</a><a href="notices.html">Notices</a><a href="achievements.html">Achievements</a><a href="events.html">Events</a><a href="mou.html">MoUs</a><a href="nirf.html">NIRF</a><a href="media.html">Media</a><a href="admin.html" class="admin-nav-link">Admin</a>
+</div></nav></header>
+<main class="site-page"><div class="page-wrap"><div class="page-kicker">Department Gallery</div><h1 class="page-title">Photos & Highlights</h1><p class="page-intro">Click any photograph to open it in a full-screen viewer. You can zoom in/out, reset the view, enter browser full screen and download the original image.</p><div id="gallery-page-list" class="gallery-albums"><div class="empty-state">Loading gallery…</div></div></div></main>
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lbClose" type="button" aria-label="Close viewer">×</button>
+  <div class="lightbox-caption" id="lbCaption"></div>
+  <img id="lbImage" src="" alt="">
+  <div class="lightbox-toolbar"><button type="button" id="zoomOut">−</button><button type="button" id="zoomReset">Reset</button><button type="button" id="zoomIn">+</button><button type="button" id="lbFullscreen">Full screen</button><a id="lbDownload" href="#" target="_blank" rel="noopener" download>Download</a></div>
+</div>
+<footer class="footer"><div class="footer-bottom"><p>© 2026 Rajiv Gandhi Institute of Petroleum Technology. All Rights Reserved.</p><p>Department of Mechanical Engineering · Jais Campus</p></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/config.js"></script><script src="js/supabase-client.js"></script>
+<script>
+(function(){
+ const esc=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+ const sb=window.rgiptSupabase;let scale=1,currentUrl='',currentCaption='';
+ const lb=document.getElementById('lightbox'),im=document.getElementById('lbImage'),dl=document.getElementById('lbDownload'),cap=document.getElementById('lbCaption');
+ function openLb(url,alt){if(!url)return;scale=1;currentUrl=url;currentCaption=alt||'';im.src=url;im.alt=currentCaption;im.style.transform='scale(1)';cap.textContent=currentCaption;dl.href=url;lb.classList.add('is-open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+ function closeLb(){lb.classList.remove('is-open');lb.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+ document.getElementById('lbClose').onclick=closeLb;lb.onclick=e=>{if(e.target===lb)closeLb()};
+ document.getElementById('zoomIn').onclick=()=>{scale=Math.min(4,scale+.25);im.style.transform=`scale(${scale})`};
+ document.getElementById('zoomOut').onclick=()=>{scale=Math.max(.5,scale-.25);im.style.transform=`scale(${scale})`};
+ document.getElementById('zoomReset').onclick=()=>{scale=1;im.style.transform='scale(1)'};
+ document.getElementById('lbFullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await lb.requestFullscreen()}catch(e){}};
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&lb.classList.contains('is-open'))closeLb()});
+ // Try a true browser download first; if storage CORS prevents fetch, the normal download link remains usable.
+ dl.addEventListener('click',async e=>{if(!currentUrl)return;e.preventDefault();try{const r=await fetch(currentUrl);if(!r.ok)throw new Error('download failed');const blob=await r.blob();const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(currentCaption||'rgipt-gallery-image').replace(/[^a-z0-9_-]+/gi,'_')+'.jpg';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}catch(err){window.open(currentUrl,'_blank','noopener')}});
+ function imageButton(url,alt,cls){return `<button type="button" class="${cls||''}" data-url="${esc(url)}" data-alt="${esc(alt)}"><img class="${cls==='gallery-cover-button'?'gallery-cover':'gallery-thumb'}" src="${esc(url)}" alt="${esc(alt)}" loading="lazy"></button>`}
+ async function load(){
+  const box=document.getElementById('gallery-page-list');
+  let rows=[];
+  if(sb){const {data,error}=await sb.from('galleries').select('*,gallery_photos(*)').eq('published',true).order('created_at',{ascending:false});if(!error)rows=data||[];}
+  const supplied={id:'supplied',title:'Department Gallery',description:'Department photograph and highlights.',cover_image:'images/department-group.jpg',gallery_photos:[{image_url:'images/department-group.jpg',caption:'Department group photograph'}]};
+  rows=[supplied,...rows];
+  box.innerHTML=rows.map(g=>{const photos=g.gallery_photos||[];const cover=g.cover_image||photos[0]?.image_url||'images/department-group.jpg';return `<article class="gallery-album" id="${esc(g.id)}">${imageButton(cover,g.title,'gallery-cover-button')}<div class="gallery-album-body"><h3>${esc(g.title)}</h3><p>${esc(g.description||'')}</p><div class="gallery-open-hint">Click a photo to open, zoom, full-screen or download.</div><div class="gallery-thumbs">${photos.map(p=>imageButton(p.image_url,p.caption||g.title,'')).join('')}</div></div></article>`}).join('');
+  box.querySelectorAll('[data-url]').forEach(b=>b.addEventListener('click',()=>openLb(b.dataset.url,b.dataset.alt)));
+  const hash=location.hash.slice(1);if(hash){const target=document.getElementById(hash);if(target)target.scrollIntoView({behavior:'smooth',block:'center'})}
+ }
+ document.addEventListener('DOMContentLoaded',load);
+})();
+</script></body></html>

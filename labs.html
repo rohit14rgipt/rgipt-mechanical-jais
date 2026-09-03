@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Laboratories & Equipment | RGIPT Mechanical Engineering</title>
+<meta name="description" content="Mechanical Engineering laboratories at RGIPT Jais, with laboratory details, published equipment, images and manuals.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-container">
+    <div class="brand">
+      <img src="images/rgipt-logo.png" alt="RGIPT logo">
+      <div class="brand-text">
+        <h1>राजीव गांधी पेट्रोलियम प्रौद्योगिकी संस्थान</h1>
+        <h2>Rajiv Gandhi Institute of Petroleum Technology</h2>
+        <p>An Institution of National Importance</p>
+      </div>
+    </div>
+  </div>
+  <nav><div class="nav-container">
+    <a href="index.html">Home</a>
+    <a href="resources.html">Academics</a>
+    <a href="index.html#faculty">Faculty</a>
+    <a href="labs.html" class="active">Laboratories</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="notices.html">Notices</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="events.html">Events</a>
+    <a href="mou.html">MoUs</a>
+    <a href="nirf.html">NIRF</a>
+    <a href="media.html">Media</a>
+    <a href="admin.html" class="admin-nav-link">Admin</a>
+  </div></nav>
+</header>
+
+<main class="site-page">
+  <div class="page-wrap">
+    <div class="page-kicker">Mechanical Engineering Laboratories</div>
+    <h1 class="page-title">Labs & Equipment</h1>
+    <p class="page-intro">The original Mechanical Engineering laboratory list is shown below. Click <strong>View Lab Details</strong> on any laboratory to see its description, official details, published equipment, equipment photographs and available manuals.</p>
+
+    <div id="lab-directory" class="lab-directory"></div>
+
+    <section class="resource-group">
+      <h2>Published Laboratory Equipment</h2>
+      <p class="page-intro" style="margin-bottom:16px">Equipment added through the Admin panel appears here with its photograph, description, specifications and manual.</p>
+      <div id="rgipt-equipment-list" class="equipment-list"><div class="empty-state">Loading equipment…</div></div>
+    </section>
+  </div>
+</main>
+
+<div class="lab-details-modal" id="labDetailsModal" aria-hidden="true">
+  <div class="lab-details-panel" role="dialog" aria-modal="true" aria-labelledby="labDetailsTitle">
+    <button class="lab-details-close" id="labDetailsClose" type="button" aria-label="Close">×</button>
+    <div class="page-kicker" id="labDetailsTag">LABORATORY</div>
+    <h2 id="labDetailsTitle"></h2>
+    <p class="lab-detail-intro" id="labDetailsDescription"></p>
+    <div class="lab-resource-row" id="labDetailsResources"></div>
+    <h3 style="color:#071d49;margin:10px 0 12px">Equipment & Instruments</h3>
+    <div id="labDetailsEquipment" class="lab-equipment-grid"></div>
+  </div>
+</div>
+
+<footer class="footer"><div class="footer-bottom">
+  <p>© 2026 Rajiv Gandhi Institute of Petroleum Technology. All Rights Reserved.</p>
+  <p>Department of Mechanical Engineering · Jais Campus</p>
+</div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase-client.js"></script>
+<script>
+(function(){
+  const esc=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  const labs=[
+    {no:'01',name:'Workshop',description:'Practical engineering workshop facilities for developing hands-on skills in mechanical engineering practices.'},
+    {no:'02',name:'Engineering Visualization',description:'Facility supporting engineering visualization, graphical representation and understanding of engineering systems.'},
+    {no:'03',name:'Mechanical Engineering Lab-I',description:'Mechanical Engineering Lab-I covering ATD & EM practical learning and experimentation.'},
+    {no:'04',name:'Fluid Mechanics and Machinery Lab',description:'Practical study of fluid mechanics, fluid flow systems and hydraulic machinery.'},
+    {no:'05',name:'Heat Transfer Lab',description:'Experimental study of heat transfer processes and thermal engineering systems.'},
+    {no:'06',name:'Strength of Material Lab',description:'Experimental investigation of material strength, mechanical properties and structural behaviour.'},
+    {no:'07',name:'Theory of Machines Lab',description:'Practical study of mechanisms, machine motion and dynamics of mechanical systems.'},
+    {no:'08',name:'Mechanical Engineering Lab-II',description:'Laboratory covering Refrigeration & Air Conditioning and Internal Combustion Engine practical work.'},
+    {no:'09',name:'Mechanical Engineering Lab-III',description:'Production-oriented laboratory facilities for practical learning in manufacturing and production engineering.'},
+    {no:'10',name:'Industrial Pollution and Control Lab',description:'Practical learning related to industrial pollution, environmental monitoring and pollution control.'}
+  ];
+  const official='https://www.rgipt.ac.in/en/page/laboratories-me';
+  const box=document.getElementById('lab-directory'), equipmentBox=document.getElementById('rgipt-equipment-list');
+  const modal=document.getElementById('labDetailsModal'), title=document.getElementById('labDetailsTitle'), desc=document.getElementById('labDetailsDescription'), resources=document.getElementById('labDetailsResources'), detailEq=document.getElementById('labDetailsEquipment');
+  const closeBtn=document.getElementById('labDetailsClose');
+  let dbLabs=[], dbEquipment=[];
+  const norm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'');
+  const labNo=name=>{const m=String(name||'').match(/Lab[- ]?([IVX0-9]+)/i);return m?m[1].toUpperCase():''};
+  const labTag=l=>l.no==='01'?'WORKSHOP':('LAB-'+(l.name.match(/Lab[- ]?([IVX0-9]+)/i)?.[1]?.toUpperCase()||l.no));
+  function matchingDbLab(l){
+    return dbLabs.find(x=>norm(x.name)===norm(l.name)) || dbLabs.find(x=>norm(x.name).includes(norm(l.name)) || norm(l.name).includes(norm(x.name)));
+  }
+  function renderDirectory(){
+    box.innerHTML=labs.map(l=>`<article class="lab-card" tabindex="0" role="button" data-lab="${esc(l.name)}"><div class="lab-tag">${esc(labTag(l))}</div><h3>${esc(l.name)}</h3><p class="lab-description">${esc(l.description)}</p><span class="page-link">View Lab Details →</span></article>`).join('');
+    box.querySelectorAll('[data-lab]').forEach(card=>{
+      const open=()=>openDetails(card.dataset.lab);
+      card.addEventListener('click',open);
+      card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
+    });
+  }
+  function equipmentCard(e){
+    return `<article class="lab-equipment-item">${e.image_url?`<img src="${esc(e.image_url)}" alt="${esc(e.name)}" loading="lazy">`:'<div class="lab-empty">No equipment image</div>'}<div><h4>${esc(e.name)}</h4><p>${esc(e.description||'')}</p>${e.specifications?`<p><strong>Specifications:</strong> ${esc(e.specifications)}</p>`:''}${e.manual_url?`<p><a class="page-link" href="${esc(e.manual_url)}" target="_blank" rel="noopener">Open / Download Manual →</a></p>`:''}</div></article>`;
+  }
+  function renderEquipment(){
+    if(!dbEquipment.length){equipmentBox.innerHTML='<div class="empty-state">No equipment records published yet. Published equipment added from Admin will appear here.</div>';return;}
+    equipmentBox.innerHTML=dbEquipment.map(e=>equipmentCard(e)).join('');
+  }
+  function openDetails(name){
+    const l=labs.find(x=>x.name===name)||labs[0], db=matchingDbLab(l);
+    const items=db?dbEquipment.filter(e=>e.laboratory_id===db.id):[];
+    title.textContent=l.name; desc.textContent=l.description;
+    resources.innerHTML=`<a class="primary" href="${official}" target="_blank" rel="noopener">Official RGIPT Laboratory Details →</a>${db?.manual_url?`<a href="${esc(db.manual_url)}" target="_blank" rel="noopener">Lab Manual →</a>`:'<span title="Add a lab manual from Admin">Lab Manual: publish from Admin</span>'}${db?.location?`<span><strong>Location:</strong> ${esc(db.location)}</span>`:''}${db?.map_url?`<a href="${esc(db.map_url)}" target="_blank" rel="noopener">Open Map →</a>`:''}`;
+    detailEq.innerHTML=items.length?items.map(equipmentCard).join(''):'<div class="lab-empty">No equipment has been published for this laboratory yet. Once an administrator adds equipment, its photograph, description, specifications and manual will appear here.</div>';
+    modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';closeBtn.focus();
+  }
+  function close(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  closeBtn.addEventListener('click',close);modal.addEventListener('click',e=>{if(e.target===modal)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('is-open'))close()});
+  async function load(){
+    renderDirectory();
+    const sb=window.rgiptSupabase;if(!sb){renderEquipment();return;}
+    const [labsRes,eqRes]=await Promise.all([
+      sb.from('laboratories').select('*').eq('published',true).order('name'),
+      sb.from('equipment').select('*,laboratories(name)').eq('published',true).order('name')
+    ]);
+    dbLabs=labsRes.data||[];dbEquipment=eqRes.data||[];renderEquipment();
+  }
+  document.addEventListener('DOMContentLoaded',load);
+})();
+</script>
+</body>
+</html>

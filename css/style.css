@@ -1479,11 +1479,7 @@ footer {
 }
 
 
-/* OFFICIAL RGIPT LOGO */
-
-
-
-
+/* =========================================================
    FACULTY SECTION
 ========================================================= */
 
@@ -3800,3 +3796,360 @@ footer {
     position: relative;
     z-index: 1;
 }
+/* =========================================================
+   2026 DEPARTMENT WEBSITE UX UPGRADE
+   Keep the homepage compact; detailed resources live on pages.
+========================================================= */
+.compact-quick-section{padding-top:28px;padding-bottom:28px}
+.compact-quick-grid{grid-template-columns:repeat(4,minmax(0,1fr));max-width:1220px}
+.compact-quick-grid .quick-card{min-height:86px;padding:16px 18px}
+.compact-quick-grid .quick-card h3{font-size:16px}
+.compact-quick-grid .quick-card p{font-size:12px}
+.hero-slider-section{position:relative;min-height:560px;overflow:hidden;background:#071d49}
+.hero-slider{position:relative;min-height:560px}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;visibility:hidden;transition:opacity .55s ease;display:flex;align-items:center}
+.hero-slide.is-active{opacity:1;visibility:visible}
+.hero-slide .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,22,52,.88),rgba(4,22,52,.35),rgba(4,22,52,.15))}
+.hero-slide .hero-content{position:relative;z-index:2;max-width:1200px;width:100%;margin:auto;padding:80px 42px;color:#fff}
+.slider-arrow{position:absolute;z-index:5;top:50%;transform:translateY(-50%);width:46px;height:46px;border:1px solid rgba(255,255,255,.45);background:rgba(7,29,73,.65);color:#fff;border-radius:50%;font-size:32px;line-height:1;cursor:pointer}
+.slider-prev{left:22px}.slider-next{right:22px}.slider-arrow:hover{background:#ffc400;color:#071d49}
+.slider-dots{position:absolute;z-index:5;left:50%;bottom:20px;transform:translateX(-50%);display:flex;gap:8px}
+.slider-dot{width:10px;height:10px;border-radius:50%;border:1px solid #fff;background:rgba(255,255,255,.45);padding:0;cursor:pointer}
+.slider-dot.is-active{background:#ffc400}
+.compact-hub-section{padding:60px 20px;background:#f7f9fc}
+.compact-hub-grid{max-width:1220px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.compact-hub-grid a{background:#fff;border:1px solid #dfe5ed;border-radius:12px;padding:20px;text-decoration:none;color:#071d49;display:flex;flex-direction:column;gap:7px;transition:.2s ease}
+.compact-hub-grid a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(7,29,73,.08);border-color:#ffc400}
+.compact-hub-grid strong{font-size:17px}.compact-hub-grid span{font-size:13px;color:#64748b;line-height:1.55}
+.faculty-highlight{font-size:12px!important;color:#53657a!important;line-height:1.5;margin-top:8px}
+.faculty-role-badge{display:inline-block!important;background:#fff4c7!important;color:#7c5b00!important;padding:4px 8px!important;border-radius:999px;font-size:11px!important;font-weight:800!important;margin:4px 0 8px!important}
+/* These collections now have dedicated pages. */
+#syllabus,#class-notes,#notices,#department-gallery,#lab-equipment,#dynamic-notes,#dynamic-syllabus,#alumni,#locations{display:none!important}
+.site-page{padding:70px 20px;background:#f7f9fc;min-height:70vh}
+.page-wrap{max-width:1220px;margin:0 auto}.page-kicker{text-transform:uppercase;letter-spacing:2px;color:#b18700;font-weight:800;font-size:12px}.page-title{font-size:42px;color:#071d49;margin:8px 0 12px}.page-intro{color:#64748b;max-width:850px;line-height:1.7;margin-bottom:30px}
+.page-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.page-card{background:#fff;border:1px solid #dfe5ed;border-radius:14px;padding:22px}.page-card h3{color:#071d49;margin:0 0 8px;font-size:20px}.page-card p{color:#5e6c7d;line-height:1.65}.page-card a,.page-link{color:#071d49;font-weight:800;text-decoration:none}.page-card a:hover,.page-link:hover{color:#b18700}
+.resource-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}.resource-tab{border:1px solid #d9e1ea;background:#fff;color:#071d49;padding:10px 14px;border-radius:999px;font-weight:800;cursor:pointer}.resource-tab.active,.resource-tab:hover{background:#ffc400;border-color:#ffc400}
+.resource-group{margin:28px 0}.resource-group h2{color:#071d49;font-size:24px}.resource-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.resource-item{background:#fff;border:1px solid #dfe5ed;border-radius:12px;padding:18px;display:flex;justify-content:space-between;gap:15px;align-items:flex-start}.resource-item h3{margin:0 0 5px;color:#071d49;font-size:16px}.resource-meta{font-size:12px;color:#7b8794}.resource-actions{display:flex;gap:7px;flex-wrap:wrap}.small-btn{display:inline-block;border:1px solid #d7dee8;border-radius:8px;padding:8px 10px;text-decoration:none;font-size:12px;font-weight:800;color:#071d49;background:#fff}.small-btn.primary{background:#071d49;color:#fff;border-color:#071d49}.small-btn.gold{background:#ffc400;border-color:#ffc400}
+.gallery-albums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.gallery-album{background:#fff;border:1px solid #dfe5ed;border-radius:14px;overflow:hidden}.gallery-cover{width:100%;height:190px;object-fit:cover;display:block}.gallery-album-body{padding:17px}.gallery-album h3{margin:0;color:#071d49}.gallery-album p{color:#64748b;line-height:1.5}.gallery-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px}.gallery-thumb{width:100%;height:85px;object-fit:cover;cursor:pointer;border-radius:6px}.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;display:none;align-items:center;justify-content:center;padding:30px}.lightbox.is-open{display:flex}.lightbox img{max-width:92vw;max-height:82vh;object-fit:contain}.lightbox-close,.lightbox-download{position:absolute;top:20px;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.35);color:#fff;border-radius:8px;padding:10px 14px;font-weight:800;text-decoration:none}.lightbox-close{right:20px;font-size:20px}.lightbox-download{left:20px}.lightbox-zoom{position:absolute;bottom:20px;display:flex;gap:8px}.lightbox-zoom button{padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.35);color:#fff;cursor:pointer;font-weight:800}
+.lab-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.lab-card{background:#fff;border:1px solid #dfe5ed;border-radius:14px;padding:22px}.lab-card.featured{border-top:4px solid #ffc400}.lab-card h3{margin:0;color:#071d49}.lab-card .lab-tag{font-size:11px;font-weight:800;letter-spacing:1px;color:#b18700}.equipment-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.equipment-card{background:#fff;border:1px solid #dfe5ed;border-radius:12px;padding:16px;display:flex;gap:15px}.equipment-card img{width:130px;height:100px;object-fit:cover;border-radius:8px}
+.achievement-tabs,.event-grid,.mou-grid,.nirf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.achievement-card,.event-card,.mou-card,.nirf-card{background:#fff;border:1px solid #dfe5ed;border-radius:14px;padding:22px}.achievement-card h3,.event-card h3,.mou-card h3,.nirf-card h3{margin:0 0 8px;color:#071d49}.category-label{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1px;color:#b18700;margin-bottom:9px}.empty-state{background:#fff;border:1px dashed #cfd8e3;border-radius:12px;padding:30px;color:#64748b}
+.nirf-rank{font-size:48px;font-weight:900;color:#071d49;line-height:1}.nirf-year{color:#b18700;font-weight:900;letter-spacing:1px}.media-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.media-card{background:#fff;border:1px solid #dfe5ed;border-radius:14px;overflow:hidden}.media-card img,.media-card video{width:100%;height:200px;object-fit:cover;background:#0b1830}.media-card-body{padding:17px}
+@media(max-width:1000px){.compact-quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.compact-hub-grid,.page-grid,.gallery-albums,.lab-list,.achievement-tabs,.event-grid,.mou-grid,.nirf-grid,.media-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.resource-list,.equipment-list{grid-template-columns:1fr}}
+@media(max-width:650px){.hero-slider-section,.hero-slider{min-height:500px}.hero-slide .hero-content{padding:70px 28px}.page-title{font-size:32px}.compact-quick-grid,.compact-hub-grid,.page-grid,.gallery-albums,.lab-list,.achievement-tabs,.event-grid,.mou-grid,.nirf-grid,.media-grid{grid-template-columns:1fr}.slider-arrow{width:38px;height:38px;font-size:25px}.resource-item,.equipment-card{flex-direction:column}.gallery-thumbs{grid-template-columns:repeat(2,1fr)}}
+
+
+/* =========================================================
+   FINAL COMPACT LAYOUT FIXES
+========================================================= */
+/* Secondary pages were using a raw <img>, so the intrinsic RGIPT
+   logo dimensions could make the header enormous. */
+.site-header .header-container{max-width:1220px;margin:0 auto;padding:14px 20px}
+.site-header .brand{display:flex;align-items:center;gap:16px}
+.site-header .brand>img{width:72px!important;height:72px!important;max-width:72px!important;object-fit:contain;display:block;flex:0 0 72px}
+.site-header .brand-text h1{font-size:18px;line-height:1.25;margin:0 0 2px;color:#333}
+.site-header .brand-text h2{font-size:22px;line-height:1.25;margin:0;color:#071d49}
+.site-header .brand-text p{font-size:12px;margin:2px 0 0;color:#777}
+.site-header nav .nav-container{max-width:1220px}
+
+/* Homepage academic cards become short, compact tabs instead of tall blocks. */
+.academics-section{padding:28px 7%!important;background:#f7f9fc}
+.academics-section .academic-card{padding:18px 20px!important;min-height:0!important;height:auto!important;border-top:3px solid #071d49;display:grid;grid-template-columns:auto 1fr auto;grid-template-rows:auto auto;column-gap:16px;align-items:center}
+.academics-section .academic-number{grid-row:1 / span 2;font-size:27px;margin:0;line-height:1}
+.academics-section .academic-card h3{font-size:17px;margin:0 0 3px}
+.academics-section .academic-card p{font-size:12px;margin:0;color:#667085;line-height:1.45}
+.academics-section .academic-card a{grid-column:3;grid-row:1 / span 2;white-space:nowrap;font-size:12px}
+
+/* Small homepage hub cards. */
+.compact-quick-section{padding:20px 20px 26px!important}
+.compact-quick-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.compact-quick-grid .quick-card{min-height:72px;padding:13px 15px}
+.compact-quick-grid .quick-icon{width:42px;height:42px;font-size:17px}
+.compact-quick-grid .quick-card h3{font-size:14px;margin-bottom:2px}
+.compact-quick-grid .quick-card p{font-size:11px;line-height:1.35}
+
+/* Keep the notices page itself visually compact. */
+#rgipt-notice-list.page-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#rgipt-notice-list.page-grid .page-card{padding:16px;border-radius:10px}
+#rgipt-notice-list.page-grid .page-card h3{font-size:17px}
+#rgipt-notice-list.page-grid .page-card p{font-size:13px;line-height:1.5}
+
+/* Achievement categories are real tabs; only the selected panel is shown. */
+.achievement-category-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 18px}
+.achievement-category-tab{border:1px solid #d9e1ea;background:#fff;color:#071d49;padding:10px 16px;border-radius:999px;font-weight:800;cursor:pointer;transition:.2s ease}
+.achievement-category-tab:hover,.achievement-category-tab.active{background:#ffc400;border-color:#ffc400;color:#071d49}
+.achievement-panel{display:none}
+.achievement-panel.active{display:block}
+.achievement-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.achievement-cards .achievement-card{padding:18px}
+
+/* All published laboratories are shown dynamically; do not hide any lab names. */
+.lab-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.lab-directory .lab-card{min-height:150px}
+
+@media(max-width:1000px){
+  .academics-section .academic-card{grid-template-columns:auto 1fr}
+  .academics-section .academic-card a{grid-column:2;grid-row:auto;margin-top:7px}
+  .achievement-cards,.lab-directory,#rgipt-notice-list.page-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:650px){
+  .site-header .header-container{padding:10px 15px}
+  .site-header .brand>img{width:58px!important;height:58px!important;max-width:58px!important;flex-basis:58px}
+  .site-header .brand-text h1{font-size:13px}
+  .site-header .brand-text h2{font-size:16px}
+  .site-header .brand-text p{font-size:10px}
+  .compact-quick-grid{grid-template-columns:1fr}
+  .academics-section .academic-card{grid-template-columns:auto 1fr}
+  .achievement-cards,.lab-directory,#rgipt-notice-list.page-grid{grid-template-columns:1fr}
+}
+.compact-notices-page{padding-top:38px!important;padding-bottom:42px!important;min-height:0!important}
+.compact-notices-page .page-intro{margin-bottom:18px}
+.academics-section{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:stretch}
+@media(max-width:1000px){.academics-section{grid-template-columns:1fr}}
+
+/* =========================================================
+   WEBSITE CREATOR CREDIT
+========================================================= */
+.creator-credit {
+    background: #f7f9fc;
+    padding: 34px 7%;
+    border-top: 1px solid #e3e8ef;
+    border-bottom: 1px solid #e3e8ef;
+}
+
+.creator-credit-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 18px 22px;
+    background: #fff;
+    border: 1px solid #dfe5ee;
+    border-left: 4px solid #ffc400;
+    border-radius: 14px;
+    box-shadow: 0 7px 22px rgba(7, 29, 73, 0.06);
+}
+
+.creator-photo-wrap {
+    width: 92px;
+    height: 92px;
+    flex: 0 0 92px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ffc400;
+    background: #eef1f5;
+}
+
+.creator-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 24%;
+}
+
+.creator-copy span {
+    display: block;
+    margin-bottom: 5px;
+    color: #b08300;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.creator-copy h2 {
+    margin: 0 0 4px;
+    color: #071d49;
+    font-size: 23px;
+}
+
+.creator-copy p {
+    margin: 0;
+    color: #52627a;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.creator-copy .creator-note {
+    margin-top: 5px;
+    color: #77849a;
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .creator-credit {
+        padding: 24px 5%;
+    }
+
+    .creator-credit-inner {
+        padding: 16px;
+        gap: 15px;
+    }
+
+    .creator-photo-wrap {
+        width: 72px;
+        height: 72px;
+        flex-basis: 72px;
+    }
+
+    .creator-copy h2 {
+        font-size: 19px;
+    }
+
+    .creator-copy p {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   FINAL FIXES — FACULTY, NOTICES, LABS & GALLERY
+========================================================= */
+
+/* Four faculty profiles per row on desktop, with compact cards. */
+.faculty-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+    gap:18px !important;
+    max-width:1280px !important;
+}
+.faculty-card{border-radius:10px;}
+.faculty-photo{height:150px !important;}
+.faculty-info{padding:14px !important;}
+.faculty-info h3{font-size:16px !important;line-height:1.3;}
+.faculty-info .designation{font-size:12px;margin-bottom:8px;}
+.faculty-info .department,.faculty-info .research,
+.faculty-info .email,.faculty-info .phone{font-size:12px !important;line-height:1.45;margin-bottom:8px;}
+.faculty-info a{font-size:12px;margin-top:6px;}
+.faculty-highlight{font-size:11px !important;}
+.faculty-role-badge{font-size:10px !important;padding:3px 7px !important;margin:3px 0 6px !important;}
+.hod-badge{font-size:10px;padding:4px 7px;margin-bottom:7px;}
+
+/* Notices should never reserve a tall empty area. */
+.compact-notices-page .page-wrap{max-width:1220px;}
+.compact-notices-page .page-title{margin-bottom:8px;}
+.compact-notices-page .page-intro{margin-bottom:16px;}
+#rgipt-notice-list.page-grid{align-items:start;}
+#rgipt-notice-list.page-grid .page-card{height:auto;min-height:0;}
+
+/* Laboratory directory: all original labs are visible and clickable. */
+.lab-directory{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+.lab-directory .lab-card{position:relative;min-height:0;padding:20px;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+.lab-directory .lab-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(7,29,73,.10);border-color:#ffc400;}
+.lab-directory .lab-card .lab-description{color:#5e6c7d;line-height:1.55;font-size:13px;margin:9px 0 14px;}
+.lab-details-modal{position:fixed;inset:0;z-index:10000;background:rgba(3,14,31,.82);display:none;align-items:center;justify-content:center;padding:20px;}
+.lab-details-modal.is-open{display:flex;}
+.lab-details-panel{width:min(1000px,96vw);max-height:90vh;overflow:auto;background:#fff;border-radius:16px;padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;}
+.lab-details-close{position:absolute;right:16px;top:12px;border:0;background:#eef2f6;color:#071d49;border-radius:50%;width:38px;height:38px;font-size:25px;cursor:pointer;}
+.lab-details-panel h2{margin:0 45px 7px 0;color:#071d49;}
+.lab-details-panel .lab-detail-intro{color:#5e6c7d;line-height:1.65;margin:0 0 20px;}
+.lab-resource-row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px;}
+.lab-resource-row a,.lab-resource-row button{display:inline-block;border:1px solid #d7dee8;background:#fff;color:#071d49;border-radius:8px;padding:9px 12px;text-decoration:none;font-weight:800;font-size:12px;cursor:pointer;}
+.lab-resource-row a.primary{background:#071d49;color:#fff;border-color:#071d49;}
+.lab-equipment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.lab-equipment-item{border:1px solid #dfe5ed;border-radius:12px;padding:13px;display:grid;grid-template-columns:120px 1fr;gap:13px;background:#f9fbfd;}
+.lab-equipment-item img{width:120px;height:100px;object-fit:cover;border-radius:8px;background:#eef2f6;}
+.lab-equipment-item h4{margin:0 0 5px;color:#071d49;font-size:15px;}
+.lab-equipment-item p{margin:5px 0;color:#5e6c7d;font-size:12px;line-height:1.5;}
+.lab-empty{border:1px dashed #cfd8e3;border-radius:12px;padding:18px;color:#64748b;background:#fafbfd;}
+
+/* Gallery images: every visible image opens the same full-screen viewer. */
+.gallery-cover-button{display:block;border:0;padding:0;width:100%;background:none;cursor:pointer;}
+.gallery-cover-button:focus-visible,.gallery-thumbs button:focus-visible{outline:3px solid #ffc400;outline-offset:2px;}
+.gallery-thumb-wrap{position:relative;}
+.gallery-thumb-wrap .gallery-thumb{display:block;}
+.gallery-open-hint{font-size:11px;color:#b18700;font-weight:800;margin-top:8px;}
+.lightbox{backdrop-filter:blur(3px);}
+.lightbox.is-open{display:flex;}
+.lightbox img{user-select:none;cursor:grab;transition:transform .18s ease;}
+.lightbox img:active{cursor:grabbing;}
+.lightbox-toolbar{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:8px;align-items:center;}
+.lightbox-toolbar button,.lightbox-toolbar a{padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.45);color:#fff;cursor:pointer;font-weight:800;text-decoration:none;}
+.lightbox-caption{position:absolute;left:20px;right:20px;bottom:72px;text-align:center;color:#fff;font-size:13px;text-shadow:0 1px 3px #000;pointer-events:none;}
+
+@media(max-width:1100px){
+  .faculty-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;}
+}
+@media(max-width:900px){
+  .faculty-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+  .lab-directory{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:650px){
+  .faculty-grid{grid-template-columns:1fr !important;}
+  .faculty-photo{height:180px !important;}
+  .lab-directory{grid-template-columns:1fr;}
+  .lab-equipment-grid{grid-template-columns:1fr;}
+  .lab-equipment-item{grid-template-columns:1fr;}
+  .lab-equipment-item img{width:100%;height:180px;}
+  .lab-details-panel{padding:20px;}
+}
+
+/* Notice cards remain visible; CMS notices are appended below the permanent cards. */
+#rgipt-notice-list .notice-dynamic-list{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:2px;}
+#rgipt-notice-list .notice-dynamic-list .page-card{height:auto;min-height:0;}
+@media(max-width:1000px){#rgipt-notice-list .notice-dynamic-list{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:650px){#rgipt-notice-list .notice-dynamic-list{grid-template-columns:1fr;}}
+
+
+/* FINAL — compact notices and editable website management team */
+.compact-notices-page{padding-top:26px!important;padding-bottom:28px!important;min-height:0!important;}
+.compact-notices-page .page-wrap{max-width:1220px!important;}
+.compact-notices-page .page-kicker{margin-bottom:6px!important;}
+.compact-notices-page .page-title{margin:0 0 6px!important;font-size:38px!important;}
+.compact-notices-page .page-intro{margin:0 0 14px!important;font-size:14px!important;}
+.compact-notices-page #rgipt-notice-list.page-grid{gap:12px!important;}
+.compact-notices-page #rgipt-notice-list .page-card{padding:14px!important;}
+
+#dynamic-notices.rgipt-dynamic-section{padding:24px 5%!important;min-height:0!important;}
+#dynamic-notices .section-title{margin-bottom:12px!important;}
+#dynamic-notices .section-title p{margin-bottom:3px!important;font-size:10px!important;}
+#dynamic-notices .section-title h2{font-size:26px!important;}
+#dynamic-notices .rgipt-dynamic-grid{gap:10px!important;min-height:0!important;}
+#dynamic-notices .rgipt-dynamic-grid>p{margin:0 auto!important;padding:12px 16px!important;width:min(100%,520px);border:1px dashed #cfd8e3;border-radius:10px;background:#fff;color:#64748b;font-size:13px;}
+#dynamic-notices .rgipt-dynamic-card{padding:12px!important;}
+
+.management-team-section{background:#fff;padding:38px 5%;border-top:1px solid #e3e8ef;}
+.management-team-inner{max-width:1100px;margin:0 auto;}
+.management-team-heading{text-align:center;margin-bottom:22px;}
+.management-team-heading>span{display:block;color:#b08300;font-size:11px;font-weight:800;letter-spacing:2px;margin-bottom:5px;}
+.management-team-heading h2{margin:0;color:#071d49;font-size:28px;}
+.management-team-heading p{margin:7px auto 0;color:#657387;font-size:13px;max-width:650px;}
+.management-team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+.management-card{display:flex;align-items:center;gap:13px;padding:13px 15px;background:#f8fafc;border:1px solid #dfe5ed;border-radius:12px;min-height:92px;}
+.management-card h3{margin:0 0 4px;color:#071d49;font-size:15px;}
+.management-card p{margin:0;color:#5e6c7d;font-size:12px;line-height:1.5;}
+.management-avatar,.management-avatar-image{width:64px;height:64px;flex:0 0 64px;border-radius:50%;display:grid;place-items:center;background:#071d49;color:#ffc400;border:2px solid #ffc400;font-size:28px;overflow:hidden;}
+.management-avatar-image{object-fit:cover;display:block;}
+.management-placeholder{border-style:dashed;opacity:.9;}
+.management-card:has(+ .management-placeholder){}
+@media(max-width:850px){.management-team-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.management-team-section{padding:28px 5%;}.management-team-grid{grid-template-columns:1fr;}.compact-notices-page .page-title{font-size:31px!important;}}
+
+/* Semester-wise course structure links */
+.semester-course-link {
+    display: inline-block;
+    margin-top: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #b88300;
+    text-decoration: none;
+}
+.semester-course-link:hover { text-decoration: underline; }
+.semester-link-only .semester-header { padding-bottom: 14px; }
+.semester-link-only .semester-header h3 { margin-bottom: 2px; }
+
+
+/* Semester course structure links on Academic Resources page */
+.course-structure-section{margin:34px 0 42px;padding:26px;background:#fff;border:1px solid #dbe3ec;border-radius:16px;box-shadow:0 8px 24px rgba(7,29,73,.06)}
+.course-structure-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:20px}
+.course-structure-heading h2{margin:4px 0 7px;color:#071d49;font-size:28px}
+.course-structure-heading p{margin:0;color:#5c7088;max-width:760px;line-height:1.6}
+.course-structure-main-link{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:9px;background:#071d49;color:#fff;text-decoration:none;font-weight:800;white-space:nowrap}
+.course-structure-main-link:hover{opacity:.92}
+.course-structure-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.course-sem-card{display:flex;align-items:center;gap:13px;padding:14px 16px;border:1px solid #dbe3ec;border-radius:11px;background:#f8fafc;text-decoration:none;color:#071d49;transition:.18s ease}
+.course-sem-card:hover{transform:translateY(-2px);border-color:#d9a400;box-shadow:0 6px 16px rgba(7,29,73,.08)}
+.course-sem-no{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#d9a400;color:#071d49;font-weight:900;flex:0 0 40px}
+.course-sem-card strong{display:block;font-size:16px}
+.course-sem-card small{display:block;margin-top:3px;color:#536b86;font-size:12px}
+@media(max-width:900px){.course-structure-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.course-structure-heading{align-items:flex-start;flex-direction:column}}
+@media(max-width:520px){.course-structure-grid{grid-template-columns:1fr}.course-structure-section{padding:20px}}
