@@ -114,3 +114,141 @@ create policy "public read site assets" on storage.objects for select using (buc
 create policy "admin upload site assets" on storage.objects for insert to authenticated with check (bucket_id='site-assets' and public.is_admin());
 create policy "admin update site assets" on storage.objects for update to authenticated using (bucket_id='site-assets' and public.is_admin()) with check (bucket_id='site-assets' and public.is_admin());
 create policy "admin delete site assets" on storage.objects for delete to authenticated using (bucket_id='site-assets' and public.is_admin());
+-- ==========================================
+-- EVENTS
+-- ==========================================
+
+create table if not exists public.events (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  event_date date not null,
+  description text,
+  image_url text,
+  venue text,
+  organizer text default 'Department of Mechanical Engineering',
+  published boolean not null default false,
+  created_at timestamptz not null default now()
+);
+
+-- ==========================================
+-- MoUs / COLLABORATIONS
+-- ==========================================
+
+create table if not exists public.mous (
+  id uuid primary key default gen_random_uuid(),
+  organization_name text not null,
+  title text not null,
+  description text,
+  mou_date date,
+  valid_until date,
+  logo_url text,
+  document_url text,
+  published boolean not null default false,
+  created_at timestamptz not null default now()
+);
+
+-- ==========================================
+-- NIRF RANKING
+-- ==========================================
+
+create table if not exists public.nirf_rankings (
+  id uuid primary key default gen_random_uuid(),
+  year int not null,
+  category text not null default 'Engineering',
+  rank int not null,
+  description text,
+  published boolean not null default false,
+  created_at timestamptz not null default now()
+);
+
+-- ==========================================
+-- ENABLE ROW LEVEL SECURITY
+-- ==========================================
+
+alter table public.events enable row level security;
+alter table public.mous enable row level security;
+alter table public.nirf_rankings enable row level security;
+
+-- ==========================================
+-- EVENTS POLICIES
+-- ==========================================
+
+create policy "public published events"
+on public.events
+for select
+using (published or public.is_admin());
+
+create policy "admin events insert"
+on public.events
+for insert
+to authenticated
+with check (public.is_admin());
+
+create policy "admin events update"
+on public.events
+for update
+to authenticated
+using (public.is_admin())
+with check (public.is_admin());
+
+create policy "admin events delete"
+on public.events
+for delete
+to authenticated
+using (public.is_admin());
+
+-- ==========================================
+-- MoUs POLICIES
+-- ==========================================
+
+create policy "public published mous"
+on public.mous
+for select
+using (published or public.is_admin());
+
+create policy "admin mous insert"
+on public.mous
+for insert
+to authenticated
+with check (public.is_admin());
+
+create policy "admin mous update"
+on public.mous
+for update
+to authenticated
+using (public.is_admin())
+with check (public.is_admin());
+
+create policy "admin mous delete"
+on public.mous
+for delete
+to authenticated
+using (public.is_admin());
+
+-- ==========================================
+-- NIRF POLICIES
+-- ==========================================
+
+create policy "public published nirf"
+on public.nirf_rankings
+for select
+using (published or public.is_admin());
+
+create policy "admin nirf insert"
+on public.nirf_rankings
+for insert
+to authenticated
+with check (public.is_admin());
+
+create policy "admin nirf update"
+on public.nirf_rankings
+for update
+to authenticated
+using (public.is_admin())
+with check (public.is_admin());
+
+create policy "admin nirf delete"
+on public.nirf_rankings
+for delete
+to authenticated
+using (public.is_admin());
