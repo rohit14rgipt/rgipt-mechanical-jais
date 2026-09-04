@@ -11,6 +11,26 @@
     laboratories:{label:'Laboratories',table:'laboratories',fields:[['name','Lab Name','text',1],['description','About','textarea',0],['location','Location','text',0],['image_url','Lab Image','image',0],['manual_url','Lab Manual (PDF)','file',0],['map_url','Google Maps / Map URL','url',0],['published','Published','checkbox',0]]},
     equipment:{label:'Lab Equipment',table:'equipment',fields:[['laboratory_id','Laboratory','labselect',1],['name','Equipment Name','text',1],['description','Description','textarea',0],['specifications','About / Specifications','textarea',0],['image_url','Equipment Image','image',0],['manual_url','Equipment Manual (PDF)','file',0],['published','Published','checkbox',0]]},
     alumni:{label:'Alumni',table:'alumni',fields:[['name','Name','text',1],['batch','Batch','text',0],['position','Position','text',0],['company','Company / Organization','text',0],['bio','Bio','textarea',0],['photo_url','Photo','image',0],['linkedin_url','Profile URL','url',0],['featured','Featured on homepage','checkbox',0],['published','Published','checkbox',0]]},
+    faculty:{
+  label:'Faculty',
+  table:'faculty',
+  fields:[
+    ['faculty_id','Faculty ID','text',1],
+    ['name','Faculty Name','text',1],
+    ['heading','Heading','text',0],
+    ['designation','Designation','text',1],
+    ['education','Education','textarea',0],
+    ['department','Department','text',0],
+    ['campus','Campus','text',0],
+    ['email','Email','email',0],
+    ['mobile','Mobile / Contact','text',0],
+    ['research','Research / Specialization','textarea',0],
+    ['photo_url','Faculty Photo','image',0],
+    ['profile_url','Profile / Website URL','url',0],
+    ['display_order','Display Order','number',0],
+    ['published','Published','checkbox',0]
+  ]
+},
     locations:{label:'Lab & Classroom Locations',table:'locations',fields:[['name','Name','text',1],['type','Type','text',1],['building','Building','text',0],['room','Room','text',0],['description','Description','textarea',0],['map_url','Map URL','url',0],['published','Published','checkbox',0]]},
     notices:{label:'Notices',table:'notices',fields:[['title','Title','text',1],['date','Date','date',1],['description','Description','textarea',0],['file_url','Notice PDF / File','file',0],['published','Published','checkbox',0]]},
     student_achievements:{label:'Student Achievements',table:'student_achievements',fields:[['title','Title','text',1],['category','Section','select',1,['training_placements','projects','awards']],['student_name','Student / Team','text',0],['year','Year','number',0],['company','Organisation / Company','text',0],['description','Details','textarea',0],['photo_url','Photo','image',0],['file_url','Attachment','file',0],['link_url','More Details URL','url',0],['published','Published','checkbox',0]]},
@@ -20,7 +40,7 @@
     homepage_slides:{label:'Homepage Slider',table:'homepage_slides',fields:[['title','Slide Title','text',1],['subtitle','Subtitle','textarea',0],['description','Short Description','textarea',0],['image_url','Slide Image','image',1],['link_url','Button URL','url',0],['sort_order','Order','number',0],['published','Published','checkbox',0]]},
     media_items:{label:'Media / Videos',table:'media_items',fields:[['title','Title','text',1],['media_type','Media Type','select',1,['image','video']],['description','Description','textarea',0],['media_url','Upload Image / Video','file',1],['external_url','External URL','url',0],['published','Published','checkbox',0]]},
     management_team:{label:'Website Management Team',table:'management_team',fields:[['name','Name','text',1],['roll_no','Roll No.','text',1],['batch','Batch','text',1],['role','Role / Responsibility','text',0],['photo_url','Photo','image',0],['sort_order','Display Order','number',0],['published','Published','checkbox',0]]}
-  };
+};
   let current='dashboard',editing=null;
   function setStatus(msg,type=''){const e=$('#pageStatus');if(e){e.className='status '+type;e.textContent=msg;e.classList.remove('hidden');}}
   function inputField([key,label,type,required,options],obj={}){
