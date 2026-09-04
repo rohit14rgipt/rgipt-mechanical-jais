@@ -41,7 +41,7 @@
     media_items:{label:'Media / Videos',table:'media_items',fields:[['title','Title','text',1],['media_type','Media Type','select',1,['image','video']],['description','Description','textarea',0],['media_url','Upload Image / Video','file',1],['external_url','External URL','url',0],['published','Published','checkbox',0]]},
     management_team:{label:'Website Management Team',table:'management_team',fields:[['name','Name','text',1],['roll_no','Roll No.','text',1],['batch','Batch','text',1],['role','Role / Responsibility','text',0],['photo_url','Photo','image',0],['sort_order','Display Order','number',0],['published','Published','checkbox',0]]}
 },
-  let current='dashboard',editing=null;
+  var current='dashboard',editing=null;
   function setStatus(msg,type=''){const e=$('#pageStatus');if(e){e.className='status '+type;e.textContent=msg;e.classList.remove('hidden');}}
   function inputField([key,label,type,required,options],obj={}){
     if(type==='checkbox')return `<div class="field"><label class="check"><input id="f_${key}" type="checkbox" ${obj[key]?'checked':''}> ${esc(label)}</label></div>`;
