@@ -7,5 +7,5 @@
 // ============================================================
 window.RGIPT_CONFIG = {
   SUPABASE_URL: 'https://ntqpjlimnofogvvwwejs.supabase.co',
-  SUPABASE_ANON_KEY: 'sb_publishable_M7WXTOE2_s_OmqHnuhHV-w_b3Bxht1C'
+  SUPABASE_ANON_KEY: 'sb_publishable_mpOKaaWCsbN7aN7k2ZrZCg_jboJ33et'
 };
