@@ -6,6 +6,6 @@
 // IMPORTANT: never put a Supabase secret/service-role key here.
 // ============================================================
 window.RGIPT_CONFIG = {
-  SUPABASE_URL: 'https://wimoxtiplxvwtxuszmcf.supabase.',
+  SUPABASE_URL: 'https://wimoxtiplxvwtxuszmcf.supabase.co',
   SUPABASE_ANON_KEY: 'sb_publishable_M7WXTOE2_s_OmqHnuhHV-w_b3Bxht1C'
 };
