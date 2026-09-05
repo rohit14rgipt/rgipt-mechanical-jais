@@ -63,6 +63,81 @@
     if(error){el.innerHTML='<p>Locations are currently unavailable.</p>';return;}
     el.innerHTML=data?.length?data.map(l=>`<article class="page-card"><h3>${esc(l.name)}</h3><p><strong>Type:</strong> ${esc(l.type||'—')} · <strong>Building:</strong> ${esc(l.building||'—')} · <strong>Room:</strong> ${esc(l.room||'—')}</p><p>${esc(l.description||'')}</p>${link(l.map_url,'Open Map')}</article>`).join(''):'<div class="empty-state">No locations published yet.</div>';
   }
+  async function loadFaculty(){
+  const el=document.querySelector('#rgipt-faculty-list');
+  if(!el)return;
+
+  const {data,error}=await sb
+    .from('faculty')
+    .select('*')
+    .eq('published',true)
+    .order('display_order',{ascending:true});
+
+  if(error){
+    console.error('Faculty loading error:',error);
+    el.innerHTML='<p>Faculty information is currently unavailable.</p>';
+    return;
+  }
+
+  if(!data?.length){
+    el.innerHTML='<p>No faculty records published yet.</p>';
+    return;
+  }
+
+  el.innerHTML=data.map(f=>`
+    <article class="faculty-card">
+
+      <div class="faculty-photo">
+        ${f.photo_url
+          ? `<img src="${esc(f.photo_url)}" alt="${esc(f.name||'Faculty member')}" loading="lazy">`
+          : ''}
+      </div>
+
+      <div class="faculty-info">
+
+        <h3>${esc(f.name||'')}</h3>
+
+        ${f.heading
+          ? `<div class="faculty-heading">${esc(f.heading)}</div>`
+          : ''}
+
+        ${f.designation
+          ? `<p class="designation">${esc(f.designation)}</p>`
+          : ''}
+
+        ${f.department
+          ? `<p class="department">${esc(f.department)}</p>`
+          : ''}
+
+        ${f.research
+          ? `<p class="research">${esc(f.research)}</p>`
+          : ''}
+
+        ${f.education
+          ? `<p class="education">${esc(f.education)}</p>`
+          : ''}
+
+        ${f.campus
+          ? `<p class="campus">${esc(f.campus)}</p>`
+          : ''}
+
+        ${f.email
+          ? `<p class="email">${esc(f.email)}</p>`
+          : ''}
+
+        ${f.mobile
+          ? `<p class="phone">${esc(f.mobile)}</p>`
+          : ''}
+
+        ${f.profile_url
+          ? link(f.profile_url,'Official Profile →')
+          : ''}
+
+      </div>
+
+    </article>
+  `).join('');
+}
   async function loadManagementTeam(){
     const el=document.querySelector('#rgipt-management-team'); if(!el)return;
     const {data,error}=await sb.from('management_team').select('*').eq('published',true).order('sort_order').order('created_at',{ascending:true});
@@ -131,7 +206,7 @@
   }
 
   function init(){
-    loadSlider();loadNotes();loadSyllabus();loadGallery();loadAlumni();loadLabs();loadLocations();loadNotices();loadAcademicResources();loadAchievements();loadEvents();loadMous();loadNirf();loadMedia();
+    loadSlider();loadNotes();loadSyllabus();loadGallery();loadAlumni();loadLabs();loadLocations();loadFaculty();loadNotices();loadAcademicResources();loadAchievements();loadEvents();loadMous();loadNirf();loadMedia();
   }
   document.addEventListener('DOMContentLoaded',init);
   loadManagementTeam();
